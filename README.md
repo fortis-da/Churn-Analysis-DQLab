@@ -241,25 +241,6 @@ Pelanggan dikelompokkan berdasarkan jumlah transaksi.
 
 Feature baru dibuat dengan nama `Count_Transaction_Group`.
 
-```python
-def func(row):
-    if row['Count_Transaction'] == 1:
-        return '1. 1'
-    elif row['Count_Transaction'] <= 3:
-        return '2. 2 - 3'
-    elif row['Count_Transaction'] <= 6:
-        return '3. 4 - 6'
-    elif row['Count_Transaction'] <= 10:
-        return '4. 7 - 10'
-    else:
-        return '5. > 10'
-
-df['Count_Transaction_Group'] = df.apply(
-    func,
-    axis=1
-)
-```
-
 ![Customer Distribution by Count Transaction Group](image/customer_distribution_by_count_transaction_group.png)
 
 Hasil distribusi:
@@ -296,9 +277,7 @@ Feature baru dibuat dengan nama `Average_Transaction_Amount_Group`.
 | >5,000,000–10,000,000 | `7. >5.000.000 - 10.000.000` |
 | >10,000,000 | `8. >10.000.000` |
 
-**Chart:** Customer Distribution by Average Transaction Amount Group
-
-![Customer Distribution by Average Transaction Amount Group](images/customer_distribution_by_average_transaction_amount_group.png)
+![Customer Distribution by Average Transaction Amount Group](image/customer_distribution_by_average_transaction_amount_group.png)
 
 Insight:
 
@@ -366,11 +345,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 ```
 
-Keterangan:
-
 - 75% data digunakan untuk training.
 - 25% data digunakan untuk testing.
-- `random_state=0` digunakan agar pembagian data dapat direproduksi.
 
 ## 10. Machine Learning Modeling
 
@@ -413,36 +389,8 @@ Evaluasi model dilakukan untuk mengukur kemampuan Logistic Regression dalam meng
 
 Confusion matrix digunakan untuk membandingkan label aktual dengan hasil prediksi model.
 
-```python
-from sklearn.metrics import confusion_matrix
+![Logistic Regression Confusion Matrix](image/logistic_regression_confusion_matrix.png)
 
-cnf_matrix = confusion_matrix(
-    y_test,
-    y_pred
-)
-
-print(cnf_matrix)
-```
-
-Hasil confusion matrix:
-
-```text
-[[ 3426  4905]
- [  994 15675]]
-```
-
-Visualisasi confusion matrix menggunakan Seaborn Heatmap.
-
-**Chart:** Logistic Regression Confusion Matrix
-
-![Confusion Matrix](images/logistic_regression_confusion_matrix.png)
-
-Interpretasi:
-
-| Actual / Predicted | Non-Churn (0) | Churn (1) |
-|---|---:|---:|
-| Non-Churn (0) | 3,426 | 4,905 |
-| Churn (1) | 994 | 15,675 |
 
 - True Negative (TN): 3,426
 - False Positive (FP): 4,905
@@ -469,40 +417,18 @@ Hasil evaluasi Logistic Regression:
 | Recall (Churn) | 94.04% |
 | F1-Score (Churn) | 84.16% |
 
-Interpretasi:
-
 **Accuracy — 76.40%**
-
 Model berhasil memprediksi sekitar 76.40% dari keseluruhan data testing dengan benar.
 
 **Precision — 76.17%**
-
 Dari seluruh pelanggan yang diprediksi churn oleh model, sekitar 76.17% benar-benar termasuk pelanggan churn.
 
 **Recall — 94.04%**
-
 Model berhasil mengidentifikasi sekitar 94.04% pelanggan yang benar-benar churn pada data testing.
-
 Recall yang tinggi menunjukkan bahwa model cukup baik dalam menangkap pelanggan churn, meskipun masih terdapat pelanggan non-churn yang salah diklasifikasikan sebagai churn.
 
 **F1-Score — 84.16%**
-
 F1-Score merupakan harmonic mean dari precision dan recall. Metrik ini digunakan untuk melihat keseimbangan antara precision dan recall.
-
-### 11.3 Decision Tree Comparison
-
-Selain Logistic Regression, model Decision Tree juga diuji sebagai pembanding.
-
-| Metric | Logistic Regression | Decision Tree |
-|---|---:|---:|
-| Accuracy | 76.40% | 65.26% |
-| Precision (Churn) | 76.17% | 74.00% |
-| Recall (Churn) | 94.04% | 73.84% |
-| F1-Score (Churn) | 84.16% | 73.92% |
-
-Berdasarkan hasil evaluasi, Logistic Regression memiliki performa yang lebih baik dibandingkan Decision Tree default pada seluruh metrik yang dibandingkan.
-
-Dengan demikian, Logistic Regression dipilih sebagai model yang lebih baik pada eksperimen ini.
 
 ## 12. Key Business Insights
 
