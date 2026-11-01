@@ -1,4 +1,4 @@
-# Customer Churn Analysis — DQLab Sport Center
+# Customer Churn Analysis - DQLab Sport Center
 
 Analisis customer churn pada DQLab Sport Center menggunakan Python, Exploratory Data Analysis (EDA), data visualization, dan Machine Learning dengan Logistic Regression.
 
@@ -498,25 +498,12 @@ Segmentasi tersebut dapat membantu perusahaan menentukan prioritas pelanggan dan
 ### 13.4 Win-Back Campaign
 
 Pelanggan yang sudah lama tidak bertransaksi dapat menjadi target kampanye win-back.
-
 Kampanye dapat berupa:
 
 - Penawaran khusus untuk pelanggan lama.
 - Voucher transaksi ulang.
 - Rekomendasi produk.
 - Program loyalitas pelanggan.
-
-### 13.5 Retention Program Evaluation
-
-Efektivitas program retensi perlu dievaluasi menggunakan metrik bisnis, seperti:
-
-- Customer Retention Rate.
-- Repeat Purchase Rate.
-- Customer Lifetime Value.
-- Campaign Conversion Rate.
-- Retention Campaign Cost.
-
-Evaluasi dapat dilakukan melalui eksperimen seperti A/B testing untuk mengetahui apakah program retensi benar-benar meningkatkan transaksi ulang.
 
 **Catatan metodologi:** Feature `Year_Diff` dihitung menggunakan tahun transaksi terakhir, sedangkan label churn juga ditentukan dari tanggal transaksi terakhir. Oleh karena itu, fitur tersebut berpotensi mengandung informasi yang berkaitan langsung dengan target. Untuk implementasi prediksi churn yang lebih realistis, fitur harus dibentuk hanya dari informasi yang tersedia pada tanggal prediksi, kemudian churn diamati pada periode setelahnya.
 
@@ -550,9 +537,8 @@ dqlab-customer-churn-analysis/
     ├── customer_distribution_by_count_transaction_group.png
     ├── customer_distribution_by_average_transaction_amount_group.png
     └── logistic_regression_confusion_matrix.png
+```
 
 ## Disclaimer
-
 This project is intended for educational and portfolio purposes. The analysis and model results are based on the available dataset and should be validated before being applied to real business decisions.
-
 Dataset source: DQLab.
