@@ -518,19 +518,6 @@ Efektivitas program retensi perlu dievaluasi menggunakan metrik bisnis, seperti:
 
 Evaluasi dapat dilakukan melalui eksperimen seperti A/B testing untuk mengetahui apakah program retensi benar-benar meningkatkan transaksi ulang.
 
-## 14. Limitations & Future Improvements
-
-Beberapa hal yang dapat dikembangkan dari proyek ini:
-
-- Melakukan hyperparameter tuning pada Logistic Regression.
-- Menggunakan StandardScaler untuk membantu proses optimasi model.
-- Menguji algoritma Machine Learning lainnya.
-- Melakukan threshold tuning berdasarkan kebutuhan bisnis.
-- Melakukan customer segmentation yang lebih mendalam.
-- Menggunakan temporal validation agar evaluasi model lebih realistis.
-- Menghindari penggunaan fitur yang berpotensi menyebabkan data leakage.
-- Mengevaluasi strategi retensi menggunakan A/B testing.
-
 **Catatan metodologi:** Feature `Year_Diff` dihitung menggunakan tahun transaksi terakhir, sedangkan label churn juga ditentukan dari tanggal transaksi terakhir. Oleh karena itu, fitur tersebut berpotensi mengandung informasi yang berkaitan langsung dengan target. Untuk implementasi prediksi churn yang lebih realistis, fitur harus dibentuk hanya dari informasi yang tersedia pada tanggal prediksi, kemudian churn diamati pada periode setelahnya.
 
 ## 15. Conclusion
@@ -563,21 +550,6 @@ dqlab-customer-churn-analysis/
     ├── customer_distribution_by_count_transaction_group.png
     ├── customer_distribution_by_average_transaction_amount_group.png
     └── logistic_regression_confusion_matrix.png
-```
-
-## 17. Learning Outcomes
-
-Melalui proyek ini, saya mempraktikkan kompetensi yang diperoleh dalam Data Analyst Career Track DQLab, antara lain:
-
-- Menerapkan bahasa pemrograman Python untuk analisis data.
-- Mengolah dataset menggunakan Pandas dan NumPy.
-- Melakukan data cleaning dan preprocessing.
-- Melakukan Exploratory Data Analysis (EDA).
-- Membuat visualisasi data menggunakan Matplotlib dan Seaborn.
-- Melakukan feature engineering.
-- Membangun model Machine Learning menggunakan Scikit-learn.
-- Mengevaluasi performa model klasifikasi.
-- Menginterpretasikan hasil analisis untuk menghasilkan rekomendasi bisnis.
 
 ## Disclaimer
 
